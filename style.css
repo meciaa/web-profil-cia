@@ -1,0 +1,183 @@
+/* Website pribadi Cia — CSS dasar untuk warna, layout, dan responsif. */
+:root {
+  --pink: #f4c5dc;
+  --pink-light: #fff2f7;
+  --pink-mid: #f6d8e8;
+  --pink-deep: #d96da5;
+  --purple: #ded6ef;
+  --purple-dark: #76517f;
+  --text: #654b69;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fffafd;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+.hero {
+  padding: 22px max(5%, calc((100% - 1080px) / 2)) 20px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #f9d9e9 0%, #fcecf5 48%, #e7def4 100%);
+  border-bottom-left-radius: 38px;
+  border-bottom-right-radius: 38px;
+}
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; max-width: 1080px; margin: 0 auto;
+}
+.logo, .footer-logo { color: var(--purple-dark); font-size: 30px; font-weight: 900; letter-spacing: -2px; }
+.logo span, .footer-logo span { color: var(--pink-deep); }
+.nav-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12px; font-weight: bold; }
+.nav-links a:hover { color: var(--pink-deep); }
+.hero-content {
+  max-width: 1000px; margin: 45px auto 28px;
+  display: grid; grid-template-columns: .8fr 1.2fr .75fr; align-items: center; gap: 28px;
+}
+.hero-avatar-wrap { position: relative; text-align: center; padding: 10px; }
+.avatar-halo {
+  width: 220px; height: 220px; margin: auto; display: grid; place-items: center;
+  border-radius: 50%; background: linear-gradient(145deg, #fff8fc, #e6d7f1);
+  border: 7px solid white; outline: 3px dashed #e9a7c9;
+  box-shadow: 0 10px 28px #b67fa333;
+}
+.hero-avatar {
+  width: 185px; height: 185px; display: grid; place-items: center; border-radius: 50%;
+  background: linear-gradient(145deg, #f8cce1, #e7d9f3); font-size: 94px;
+}
+.avatar-ribbon {
+  position: relative; width: 180px; margin: -4px auto 0; padding: 4px;
+  border: 2px solid white; border-radius: 10px; background: #fff8fc;
+  color: #bd5790; font-size: 22px; font-weight: bold; transform: rotate(-2deg);
+}
+.floating-heart { position: absolute; color: #d95f9f; font-size: 32px; }
+.heart-one { top: 0; left: 8%; }.heart-two { right: 4%; bottom: 35px; }
+.eyebrow, .section-label { color: #b65c91; font-size: 11px; font-weight: bold; letter-spacing: 1.7px; text-transform: uppercase; }
+h1 { margin: 5px 0; color: var(--purple-dark); font-size: clamp(35px, 4vw, 52px); line-height: 1.15; }
+h1 span, h2 span { color: #cb6099; }
+.hero-name { margin: 5px 0 15px; color: #a34d87; font-size: 22px; }
+.hero-detail { margin: 9px 0; font-size: 14px; }
+.button {
+  display: inline-block; margin-top: 10px; padding: 10px 19px;
+  color: white; background: linear-gradient(100deg, #dc78ad, #c45a99);
+  border-radius: 24px; font-size: 13px; font-weight: bold; box-shadow: 0 5px 0 #e7b5d0;
+}
+.button span { padding-left: 7px; }
+.hero-note-card {
+  padding: 18px; text-align: center; background: #fff8fc; border: 2px solid #f0bfd8;
+  border-radius: 20px 20px 20px 5px; box-shadow: 0 8px 20px #b987ad20; transform: rotate(3deg);
+}
+.hero-note-card span { color: #bf5e96; font-size: 12px; font-weight: bold; }
+.hero-note-card p { margin-bottom: 0; font-size: 13px; }
+.hero-bottom-note { text-align: center; color: #a77eaa; font-size: 11px; letter-spacing: 1px; }
+.section { max-width: 1050px; margin: 0 auto; padding: 65px 24px; text-align: center; }
+h2 { margin: 5px 0 12px; color: var(--purple-dark); font-size: clamp(28px, 3.5vw, 38px); line-height: 1.2; }
+.about-card {
+  max-width: 850px; margin: 28px auto 0; padding: 28px;
+  display: grid; grid-template-columns: 125px 1fr; gap: 25px; align-items: center;
+  text-align: left; background: linear-gradient(120deg, #fff7fb, #fce6f1);
+  border: 1px solid #f3c7de; border-radius: 24px; box-shadow: 0 10px 30px #b89ab51a;
+}
+.avatar { width: 115px; height: 115px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg, #f8d3e5, #e4d9f1); font-size: 55px; }
+.about-card h3 { margin: 0; color: var(--purple-dark); font-size: 23px; }
+.about-card p { margin: 8px 0 0; font-size: 14px; }
+.about-card .nickname { color: #b35f91; }
+.section-description { margin: 0 0 28px; font-size: 14px; }
+.favorite-section, .gallery-section {
+  max-width: 1050px; margin: 0 auto 18px; padding: 42px 24px;
+  background: linear-gradient(125deg, #fff0f7, #fbe1ed 55%, #f1e8fa);
+  border: 1px solid #f4c5dc; border-radius: 25px;
+}
+.favorite-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+.favorite-card, .hobby-card {
+  padding: 20px 15px; background: #fffafd; border: 1px solid #f3d1e3;
+  border-radius: 18px; box-shadow: 0 7px 18px #c69ab41a; transition: transform .2s ease;
+}
+.favorite-card:hover, .hobby-card:hover { transform: translateY(-4px); }
+.favorite-icon { font-size: 42px; }
+.favorite-card h3, .hobby-card h3 { margin: 8px 0; color: #a94e88; font-size: 16px; }
+.favorite-card p, .hobby-card p { margin: 0; font-size: 12px; }
+.sweet-line {
+  max-width: 780px; margin: 25px auto 0; padding: 16px 20px; color: #a84e86;
+  background: #fff9fc; border: 1px dashed #e8a4c8; border-radius: 18px; font-size: 14px;
+}
+.hobbies-section { max-width: none; padding: 65px max(5%, calc((100% - 1050px) / 2)); background: linear-gradient(135deg, #fff7fb, #fce5f1); }
+.hobby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; text-align: center; }
+.hobby-card { padding: 25px 20px; }
+.hobby-icon { width: 72px; height: 72px; margin: 0 auto 10px; display: grid; place-items: center; background: #f8e0ed; border-radius: 24px; font-size: 36px; }
+.gallery-section { margin-top: 24px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; margin-top: 24px; }
+.gallery-card { padding: 10px; background: white; border: 1px solid #e5b8ce; box-shadow: 0 5px 12px #b48aa51a; transform: rotate(-1deg); }
+.gallery-card:nth-child(even) { transform: rotate(1.5deg); }
+.gallery-art { min-height: 130px; display: grid; place-items: center; background: linear-gradient(145deg, #f7e9e8, #dfe8cc); border-radius: 12px; font-size: 48px; }
+.gallery-card p { margin: 8px 0 0; color: #a55d88; font-family: Georgia, serif; font-style: italic; font-size: 13px; }
+.motto-section {
+  position: relative; padding: 75px 24px; overflow: hidden; text-align: center;
+  background: linear-gradient(130deg, #f7d5e7, #fcecf5 50%, #e5dcf2);
+}
+.motto-section blockquote { max-width: 780px; margin: 24px auto 14px; color: #a84e88; font-size: clamp(24px, 4vw, 38px); font-weight: bold; line-height: 1.35; }
+.motto-note { font-size: 14px; }
+.sparkle { position: absolute; color: white; font-size: 42px; }
+.sparkle-left { top: 28px; left: 12%; }.sparkle-right { right: 12%; bottom: 25px; }
+.gombal-section { padding-top: 55px; padding-bottom: 65px; }
+.gombal-card { max-width: 740px; margin: 25px auto 0; padding: 25px; background: linear-gradient(120deg, #fff0f7, #f2e7fa); border: 1px solid #f0c6dd; border-radius: 25px; }
+.gombal-card p { margin: 0; color: #a64d86; font-size: 18px; font-weight: bold; }
+.gombal-card .gombal-small { margin-top: 12px; font-size: 13px; font-weight: normal; }
+footer { padding: 32px 20px 20px; text-align: center; background: linear-gradient(120deg, #f8d3e6, #e7def4); }
+.footer-logo { font-size: 27px; }
+footer p { margin: 4px 0 12px; font-size: 13px; }
+.back-top { display: inline-block; margin-bottom: 18px; color: #a85d89; font-size: 12px; font-weight: bold; }
+footer small { display: block; padding-top: 15px; border-top: 1px solid #edc4da; color: #927d99; font-size: 11px; }
+@media (max-width: 850px) {
+  .hero-content { grid-template-columns: .8fr 1.2fr; }
+  .hero-note-card { grid-column: 1 / -1; max-width: 360px; margin: 0 auto; }
+  .favorite-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .hero { padding: 18px 18px 20px; border-bottom-left-radius: 28px; border-bottom-right-radius: 28px; }
+  .navbar { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .nav-links { gap: 9px 14px; font-size: 11px; }
+  .hero-content { margin-top: 28px; grid-template-columns: 1fr; gap: 20px; text-align: center; }
+  .avatar-halo { width: 185px; height: 185px; }
+  .hero-avatar { width: 155px; height: 155px; font-size: 75px; }
+  .hero-note-card { max-width: 300px; }
+  .section { padding: 48px 18px; }
+  .about-card { grid-template-columns: 1fr; justify-items: center; padding: 22px; text-align: center; }
+  .avatar { width: 100px; height: 100px; font-size: 48px; }
+  .favorite-section, .gallery-section { margin-left: 12px; margin-right: 12px; padding: 32px 14px; }
+  .favorite-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .favorite-card { padding: 16px 10px; }
+  .hobbies-section { padding: 48px 18px; }
+  .hobby-grid { grid-template-columns: 1fr; max-width: 420px; margin: auto; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gallery-art { min-height: 105px; }
+  .motto-section { padding: 60px 20px; }
+  .sparkle-left { left: 4%; }.sparkle-right { right: 4%; }
+  .gombal-card { padding: 20px; }
+  .gombal-card p { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+
+/* Area foto: foto avatar dan foto galeri bisa diganti dari folder images. */
+.photo-frame { overflow: hidden; position: relative; }
+.profile-photo { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.photo-placeholder { width: 100%; height: 100%; place-items: center; align-content: center; gap: 4px; color: #b85d94; font-size: 52px; }
+.photo-placeholder small { display: block; font-size: 11px; letter-spacing: .5px; }
+.photo-art { overflow: hidden; }
+.photo-art img { width: 100%; height: 130px; display: block; object-fit: cover; border-radius: 10px; }
+.tiny-likes { text-align: left; max-width: 650px; }
+.tiny-likes p { margin: 7px 0; font-size: 17px; font-weight: bold; color: #a64d86; }
+@media (max-width: 600px) {
+  .photo-art img { height: 105px; }
+  .tiny-likes p { font-size: 15px; }
+}
